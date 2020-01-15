@@ -39,9 +39,9 @@ def upload_file(filename):
   with open(filename, 'rb') as read_file:
     content = read_file.read()
     if filename == "Reporting_ETL.xlsx":
-      p = s.post("https://group.sharepoint.com/sites/cnx_ops/_api/web/getfolderbyserverrelativeurl('/sites/WORKGROUP/Shared%20Documents/5.%20MASTERDATA%20powerbi/')/Files/add(url='"+filename+"',overwrite=true)", data=content, headers=headers)
+      p = s.post("https://group.sharepoint.com/sites/WORKGROUP/_api/web/getfolderbyserverrelativeurl('/sites/WORKGROUP/Shared%20Documents/5.%20MASTERDATA%20powerbi/')/Files/add(url='"+filename+"',overwrite=true)", data=content, headers=headers)
     else:
-      p = s.post("https://group.sharepoint.com/sites/cnx_ops/_api/web/getfolderbyserverrelativeurl('/sites/WORKGROUP/Shared%20Documents/5.%20MASTERDATA%20powerbi/DATASETS%20V2/')/Files/add(url='"+filename+"',overwrite=true)", data=content, headers=headers)
+      p = s.post("https://group.sharepoint.com/sites/WORKGROUP/_api/web/getfolderbyserverrelativeurl('/sites/WORKGROUP/Shared%20Documents/5.%20MASTERDATA%20powerbi/DATASETS%20V2/')/Files/add(url='"+filename+"',overwrite=true)", data=content, headers=headers)
   
   print("file uploaded")
   # Delete the local uploaded file
